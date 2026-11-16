@@ -1,0 +1,96 @@
+{
+  "name": "Address",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "title": "Compte li\u00e9"
+    },
+    "customer_id": {
+      "type": "string",
+      "title": "Client"
+    },
+    "label": {
+      "type": "string",
+      "title": "Nom du lieu (Maison, Travail...)"
+    },
+    "details": {
+      "type": "string",
+      "title": "Adresse"
+    },
+    "lat": {
+      "type": "number",
+      "title": "Latitude"
+    },
+    "lng": {
+      "type": "number",
+      "title": "Longitude"
+    },
+    "distance_km": {
+      "type": "number",
+      "title": "Distance depuis Itaosy (km)"
+    },
+    "fee": {
+      "type": "number",
+      "title": "Frais estim\u00e9s (Ar)"
+    },
+    "is_default": {
+      "type": "boolean",
+      "title": "Adresse principale",
+      "default": false
+    }
+  },
+  "required": [
+    "details"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

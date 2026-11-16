@@ -1,0 +1,59 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nom de la saveur"
+    },
+    "description": {
+      "type": "string",
+      "title": "Ingr\u00e9dients"
+    },
+    "price": {
+      "type": "number",
+      "title": "Prix unitaire (Ar)"
+    },
+    "illustration": {
+      "type": "string",
+      "title": "Illustration",
+      "default": "classique"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Photo (si tu remplaces l'illustration)"
+    },
+    "available": {
+      "type": "boolean",
+      "title": "Disponible",
+      "default": true
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "Ordre d'affichage",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

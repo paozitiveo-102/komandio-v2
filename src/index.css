@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: 25 100% 98%;
+    --foreground: 15 33% 22%;
+    --card: 0 0% 100%;
+    --card-foreground: 15 33% 22%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 33% 22%;
+    --primary: 11 52% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 203 28% 76%;
+    --secondary-foreground: 15 33% 22%;
+    --muted: 14 45% 94%;
+    --muted-foreground: 20 18% 46%;
+    --accent: 14 45% 94%;
+    --accent-foreground: 15 33% 22%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 14 42% 90%;
+    --input: 14 42% 90%;
+    --ring: 11 52% 42%;
+    --radius: 1.25rem;
+    --font-heading: 'Fredoka', ui-rounded, system-ui, sans-serif;
+    --font-body: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fredoka', ui-rounded, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --brand-terra: 11 51% 42%;
+    --brand-terraSoft: 13 47% 53%;
+    --brand-blue: 204 28% 75%;
+    --brand-blueSoft: 203 30% 88%;
+    --brand-pink: 0 40% 90%;
+    --brand-pinkSoft: 13 58% 95%;
+    --brand-cream: 25 100% 98%;
+    --brand-brown: 15 33% 22%;
+    --brand-brownSoft: 19 17% 46%;
+    --brand-honey: 35 77% 60%;
+    --brand-honeyDeep: 36 77% 31%;
+    --brand-leaf: 117 25% 63%;
+    --brand-leafDeep: 117 27% 33%;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 18 15% 10%;
+    --foreground: 25 40% 94%;
+    --card: 18 14% 14%;
+    --card-foreground: 25 40% 94%;
+    --popover: 18 14% 14%;
+    --popover-foreground: 25 40% 94%;
+    --primary: 11 55% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 203 18% 28%;
+    --secondary-foreground: 25 40% 94%;
+    --muted: 18 12% 18%;
+    --muted-foreground: 22 16% 68%;
+    --accent: 18 12% 20%;
+    --accent-foreground: 25 40% 94%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 18 12% 22%;
+    --input: 18 12% 24%;
+    --ring: 11 55% 52%;
+    --sidebar-background: 18 14% 12%;
+    --sidebar-foreground: 25 40% 94%;
+    --sidebar-primary: 11 55% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 18 12% 20%;
+    --sidebar-accent-foreground: 25 40% 94%;
+    --sidebar-border: 18 12% 22%;
+    --sidebar-ring: 11 55% 52%;
+
+    --brand-terra: 11 55% 52%;
+    --brand-terraSoft: 13 50% 62%;
+    --brand-blue: 203 20% 55%;
+    --brand-blueSoft: 203 16% 25%;
+    --brand-pink: 12 14% 24%;
+    --brand-pinkSoft: 12 14% 18%;
+    --brand-cream: 18 15% 10%;
+    --brand-brown: 25 40% 94%;
+    --brand-brownSoft: 22 18% 70%;
+    --brand-honey: 35 75% 62%;
+    --brand-honeyDeep: 35 85% 72%;
+    --brand-leaf: 117 28% 62%;
+    --brand-leafDeep: 117 35% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+
+  body {
+    @apply bg-brand-cream text-brand-brown font-body antialiased;
+    font-size: 16px;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading text-brand-brown;
+    letter-spacing: -0.01em;
+  }
+
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .pao-card {
+    @apply rounded-[28px] bg-card border border-brand-pink/70 shadow-[0_10px_30px_-22px_rgba(74,46,37,0.45)];
+  }
+
+  .pao-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-terra px-6 text-white font-heading font-medium
+           shadow-[0_12px_24px_-12px_rgba(163,74,53,0.9)] transition-all duration-200
+           active:scale-[0.985] disabled:opacity-40 disabled:shadow-none disabled:active:scale-100;
+  }
+
+  .pao-btn-soft {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-card border border-brand-pink text-brand-brown
+           font-heading font-medium transition-all duration-200 active:scale-[0.985] disabled:opacity-40;
+  }
+
+  .pao-input {
+    @apply w-full rounded-2xl border border-brand-pink bg-card px-4 py-3.5 text-[15px] text-brand-brown
+           placeholder:text-brand-brownSoft/60 focus:outline-none focus:ring-2 focus:ring-brand-terra/30 focus:border-brand-terra/60;
+  }
+
+  .pao-label {
+    @apply block text-[13px] font-semibold text-brand-brownSoft mb-1.5;
+  }
+}
+
+/* WebView : pas de rebond élastique, pas de sélection sur les contrôles */
+button,
+a,
+nav a,
+[role='tab'],
+.pao-btn,
+.pao-btn-soft {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+button svg,
+nav a svg,
+.pao-pin {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable='true'] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Mode sombre : les surfaces blanches deviennent des cartes sombres */
+.dark .bg-white {
+  background-color: hsl(var(--card));
+}
+
+.leaflet-container {
+  font-family: var(--font-body);
+  background: #eef3f5;
+}
+
+.pao-pin {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #a34a35;
+  border: 3px solid #fff8f3;
+  box-shadow: 0 4px 10px rgba(74, 46, 37, 0.35);
+}
+
+.pao-pin-home {
+  background: #afc4d2;
+  border-color: #fff8f3;
+}

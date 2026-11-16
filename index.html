@@ -1,0 +1,32 @@
+const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://media.db.com/images/public/6ae88de833004a142a32a26e/ba2b562a0_LogocirculairepastelPA-zitiveo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://media.db.com/images/public/6ae88de833004a142a32a26e/ba2b562a0_LogocirculairepastelPA-zitiveo.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFF8F3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="description"
+      content="Pao-zitiveo : des pao chinois tout chauds, préparés à Antananarivo et livrés chez toi. Une dose de bonheur à chaque PAO !"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Pao-zitiveo · Une dose de bonheur à chaque PAO</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
